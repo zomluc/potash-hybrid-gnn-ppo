@@ -18,9 +18,13 @@ The code implements a weekly simulation environment with overseas supply channel
 - `analyze_fusion_gate.py`: actor-gate diagnostics over the 20 common test seeds.
 - `refresh_publication_figures.py`: regeneration of the publication-ready comparison, sensitivity, stress-test, and policy-behavior figures.
 - `MODEL_DESIGN.md`, `OBSERVATION_ACTION_SPACE.md`, `EVENT_SIGNAL_SEASONAL_NOTE.md`: architecture, interface, and stochastic-environment documentation.
-- `results.zip` or `results/`: machine-readable CSV/JSON outputs and paper figures from the reported experiments. If the results are provided as `results.zip`, unzip it in the repository root before inspecting reproduced outputs or rerunning post-training analyses.
+- `results.zip` or `results/`: machine-readable CSV/JSON outputs and paper figures from the experiments. If the results are provided as `results.zip`, unzip it in the repository root before inspecting the outputs or rerunning post-training analyses.
 
-The five best-validation PyTorch checkpoints are distributed separately as the GitHub Release asset `best_checkpoints.zip` because the GNN and Hybrid GNN checkpoints exceed GitHub's ordinary per-file upload limit. Extract the archive in the repository root to restore `results/<method>/ppo_best.pt`. The checkpoints can also be regenerated with the training commands below.
+## Reproducibility Release
+
+The archived outputs and best-validation checkpoints are available in the [v1.0 reproducibility release](https://github.com/zomluc/potash-hybrid-gnn-ppo/releases/tag/v1.0-reproducibility). Download `results.zip` and extract it in the repository root to restore the machine-readable experimental outputs.
+
+The Plain PPO and Transformer-PPO checkpoints are provided as `plain_ppo_checkpoint.zip` and `transformer_ppo_checkpoint.zip`. The larger GAT-PPO, GNN-PPO, and Hybrid GNN-PPO checkpoints are provided as 20 MB multipart RAR archives. For each method, download every consecutively numbered part into one directory and extract only the `.part1.rar` file with WinRAR, 7-Zip, or another RAR-compatible tool. The included `README_CHECKPOINT_PARTS.txt` lists the restored paths and SHA-256 hashes. Extracting all checkpoint archives in the repository root restores `results/<method>/ppo_best.pt`. The checkpoints can also be regenerated with the training commands below.
 
 ## Environment
 
