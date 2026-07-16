@@ -1,0 +1,93 @@
+{
+  "checkpoint": "results\\ppo\\ppo_best.pt",
+  "seeds": [
+    101,
+    202,
+    303,
+    404,
+    505,
+    606,
+    707,
+    808,
+    909,
+    1001,
+    1102,
+    1203,
+    1304,
+    1405,
+    1506,
+    1607,
+    1708,
+    1809,
+    1901,
+    2002
+  ],
+  "observations": 1040,
+  "overall": {
+    "graph_weight_mean": 0.47395872476582346,
+    "graph_weight_std": 0.0045685077384903,
+    "flat_weight_mean": 0.5260412754920812,
+    "graph_weight_p05": 0.4682782098650932,
+    "graph_weight_p95": 0.48470527678728104
+  },
+  "regimes": {
+    "high_backlog": {
+      "column": "backlog_before",
+      "focal_regime": "not_identifiable",
+      "threshold": 0.0,
+      "reason": "The requested quantile does not separate the observed evaluation states."
+    },
+    "low_inventory": {
+      "column": "inventory_before",
+      "focal_regime": "low",
+      "threshold": 20845.605974171598,
+      "focal_n": 260,
+      "reference_n": 780,
+      "focal_graph_weight_mean": 0.4736272325882545,
+      "reference_graph_weight_mean": 0.4740692221583464,
+      "difference_focal_minus_reference": -0.0004419895700918941
+    },
+    "high_supply_risk": {
+      "column": "supply_risk",
+      "focal_regime": "high",
+      "threshold": 0.29028805236315275,
+      "focal_n": 260,
+      "reference_n": 780,
+      "focal_graph_weight_mean": 0.4721133076227628,
+      "reference_graph_weight_mean": 0.4745738638135103,
+      "difference_focal_minus_reference": -0.002460556190747476
+    },
+    "high_transport_risk": {
+      "column": "transport_risk",
+      "focal_regime": "high",
+      "threshold": 0.39390455783304135,
+      "focal_n": 260,
+      "reference_n": 780,
+      "focal_graph_weight_mean": 0.47241768676501056,
+      "reference_graph_weight_mean": 0.47447240409942776,
+      "difference_focal_minus_reference": -0.0020547173344172
+    }
+  },
+  "correlations": {
+    "backlog_before": {
+      "spearman_rho": 0.032879597991963216,
+      "p_value": 0.2894420288952656
+    },
+    "inventory_before": {
+      "spearman_rho": -0.17028420616054768,
+      "p_value": 3.289271093021659e-08
+    },
+    "supply_risk": {
+      "spearman_rho": -0.4117454820502841,
+      "p_value": 8.035940290976618e-44
+    },
+    "transport_risk": {
+      "spearman_rho": -0.31855744175896505,
+      "p_value": 5.862981033904424e-26
+    },
+    "price_risk": {
+      "spearman_rho": -0.09313899431647298,
+      "p_value": 0.002642152414384174
+    }
+  }
+}
